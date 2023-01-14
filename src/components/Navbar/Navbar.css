@@ -19,6 +19,7 @@ body {
   z-index: 999;
   background-color: #7f7f7f;
   box-shadow: 0 0 0 1px #a5a5a5;
+  padding: 0 10px;
 }
 
 .navbar__rigth {
@@ -32,8 +33,13 @@ body {
 }
 
 .super {
-  vertical-align: super;
-  font-size: 20px;
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -20px;
 }
 .cart__icon {
   display: flex;

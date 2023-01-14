@@ -1,9 +1,15 @@
 import React, { useRef, useState } from "react";
+import { CartState} from "../../Context/CartContext";
 import "./Products.css";
 function Products({ product }) {
   const [count, setCount] = useState(0);
+  const [toggleBtn, setToggleBtn] = useState(false);
   const addButton = useRef(null);
   const hiddenBtn = useRef(null);
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
   return (
     <div className="container">
       <div className="card">
@@ -21,27 +27,11 @@ function Products({ product }) {
 
             <p>{product.type}</p>
             <div className="wrapper">
-              <div className="btn_wrapper">
-                <button
-                  ref={addButton}
-                  type="button"
-                  title="Bestel"
-                  className="button btn-cart"
-                  onClick={() => {
-                    setCount(count + 1);
-                    addButton.current.style.display = "none";
-                    hiddenBtn.current.style.display = "block";
-                  }}>
-                  <span>
-                    <i className="fa fa-shopping-cart"></i>
-                    <i className="fa fa-arrow-down"></i>
-                    <span>Add to cart</span>
-                  </span>
-                </button>
+              {toggleBtn ? (
                 <div ref={hiddenBtn} className="hidden__btn">
                   <button
                     onClick={() => {
-                      if (count == product.quantity) {
+                      if (count === product.quantity) {
                         alert("Reached max quantity");
                       } else {
                         setCount(count + 1);
@@ -53,12 +43,14 @@ function Products({ product }) {
                   <span className="count">{count}</span>
                   <button
                     onClick={() => {
-                      if (count == 0) {
+                      if (count === 1) {
+                        setCount(count - 1);
+                        dispatch({
+                          type: "REMOVE_FROM_CART",
+                          payload: product,
+                        });
+                        setToggleBtn(false);
                         return;
-                      }
-                      if (count == 1) {
-                        addButton.current.style.display = "block";
-                        hiddenBtn.current.style.display = "none";
                       }
                       setCount(count - 1);
                     }}
@@ -66,7 +58,29 @@ function Products({ product }) {
                     -
                   </button>
                 </div>
-              </div>
+              ) : (
+                <div className="btn_wrapper">
+                  <button
+                    ref={addButton}
+                    type="button"
+                    title="Bestel"
+                    className="button btn-cart"
+                    onClick={() => {
+                      dispatch({
+                        type: "ADD_TO_CART",
+                        payload: product,
+                      });
+                      setCount(count + 1);
+                      setToggleBtn(true);
+                    }}>
+                    <span>
+                      <i className="fa fa-shopping-cart"></i>
+                      <i className="fa fa-arrow-down"></i>
+                      <span>Add to cart</span>
+                    </span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

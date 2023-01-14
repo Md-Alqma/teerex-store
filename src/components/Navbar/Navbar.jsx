@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CartState } from "../../Context/CartContext";
 import "./Navbar.css";
+
 const Navbar = () => {
+  const {
+    state: { cart },
+  } = CartState();
   return (
     //-------- Navbar --------
     <div className="navbar__container">
@@ -13,8 +18,8 @@ const Navbar = () => {
           <h2>Products</h2>
         </Link>
         <Link to="/cart" className="links">
-          <span className="cart__count super">0</span>
-          <img width="32px" src="/Images/cart.png" />
+          <img width="32px" src="/Images/cart.png" alt="cart" />
+          <span className="cart__count super">{cart.length}</span>
         </Link>
       </div>
     </div>

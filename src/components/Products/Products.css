@@ -187,10 +187,6 @@ button.btn-cart:active:before {
 }
 
 div.hidden__btn {
-  display: none;
-}
-
-div.hidden__btn {
   border: none;
   background: #ff8100;
   border-radius: 25px;

@@ -20,7 +20,6 @@ function ProductList() {
     }
   };
 
-  console.log(productsData);
   return (
     <div className="cards__container">
       {productsData?.map((product, index) => (
