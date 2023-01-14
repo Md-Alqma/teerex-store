@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./Products.css";
 function Products({ product }) {
+  const [count, setCount] = useState(0);
+  const addButton = useRef(null);
+  const hiddenBtn = useRef(null);
   return (
     <div className="container">
       <div className="card">
@@ -17,22 +20,53 @@ function Products({ product }) {
             <h3>Rs{product.price}</h3>
 
             <p>{product.type}</p>
-          </div>
-          <div class="cont">
-            <div class="crtdiv">
-              <span class="qty">
-                <span class="dec">
-                  <i class="fa fa-minus-square" aria-hidden="true"></i>
-                </span>
-                <span class="num">1</span>
-                <span class="inc">
-                  <i class="fa fa-plus-square" aria-hidden="true"></i>
-                </span>
-              </span>
-              <button id="btn" type="button" class="cart">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to
-                cart
-              </button>
+            <div className="wrapper">
+              <div className="btn_wrapper">
+                <button
+                  ref={addButton}
+                  type="button"
+                  title="Bestel"
+                  className="button btn-cart"
+                  onClick={() => {
+                    setCount(count + 1);
+                    addButton.current.style.display = "none";
+                    hiddenBtn.current.style.display = "block";
+                  }}>
+                  <span>
+                    <i className="fa fa-shopping-cart"></i>
+                    <i className="fa fa-arrow-down"></i>
+                    <span>Add to cart</span>
+                  </span>
+                </button>
+                <div ref={hiddenBtn} className="hidden__btn">
+                  <button
+                    onClick={() => {
+                      if (count == product.quantity) {
+                        alert("Reached max quantity");
+                      } else {
+                        setCount(count + 1);
+                      }
+                    }}
+                    className="plus__btn">
+                    +
+                  </button>
+                  <span className="count">{count}</span>
+                  <button
+                    onClick={() => {
+                      if (count == 0) {
+                        return;
+                      }
+                      if (count == 1) {
+                        addButton.current.style.display = "block";
+                        hiddenBtn.current.style.display = "none";
+                      }
+                      setCount(count - 1);
+                    }}
+                    className="minus__btn">
+                    -
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

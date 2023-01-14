@@ -1,6 +1,6 @@
 import React from "react";
 import "./Filter.css";
-import SingleFIlters from "../SIngleFilters/SingleFIlters";
+import SingleFilters from "../SIngleFilters/SingleFilters";
 function Filter() {
   let colour = [{ name: "Red" }, { name: "Blue" }, { name: "Green" }];
   let gender = [{ name: "Men" }, { name: "Women" }];
@@ -8,10 +8,10 @@ function Filter() {
   let type = [{ name: "Polo" }, { name: "Hoodie" }, { name: "Basic" }];
   return (
     <div className="filter__container">
-      <SingleFIlters data={colour} title="Colour" />
-      <SingleFIlters data={gender} title="Gender" />
-      <SingleFIlters data={price} title="Price" />
-      <SingleFIlters data={type} title="Type" />
+      <SingleFilters data={colour} title="Colour" />
+      <SingleFilters data={gender} title="Gender" />
+      <SingleFilters data={price} title="Price" />
+      <SingleFilters data={type} title="Type" />
     </div>
   );
 }
