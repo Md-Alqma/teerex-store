@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  padding: 0 20px;
+  padding: 0 0;
 }
 
 /*-------- Navbar --------*/
@@ -14,6 +14,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #7f7f7f;
+  box-shadow: 0 0 0 1px #a5a5a5;
 }
 
 .navbar__rigth {
