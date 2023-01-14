@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0 20px;
+}
+
+/*-------- Navbar --------*/
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__rigth {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.links {
+  text-decoration: none;
+  color: initial;
+}
+
+.super {
+  vertical-align: super;
+  font-size: 20px;
+}
+.cart__icon {
+  display: flex;
+  flex-direction: column;
+}
