@@ -1,4 +1,10 @@
 .filter__container {
-  border: 1px solid #4A8DB7;
+  border: 1px solid #4a8db7;
   padding: 0 15%;
+}
+
+@media all and (max-width: 680px) {
+  .filter__container {
+    display: none;
+  }
 }

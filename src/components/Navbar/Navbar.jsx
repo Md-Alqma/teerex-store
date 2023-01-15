@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { CartState } from "../../Context/CartContext";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ productsData, setProductsData }) => {
   const {
     state: { cart },
   } = CartState();
@@ -13,17 +12,6 @@ const Navbar = () => {
       <Link to="/" className="navbar__left links">
         <h2>Teerex Store</h2>
       </Link>
-      <div className="searchBox">
-        <input
-          className="searchInput"
-          type="text"
-          name=""
-          placeholder="Search"
-        />
-        <button className="searchButton" href="#">
-          <i className="fas fa-regular fa-magnifying-glass"></i>
-        </button>
-      </div>
       <div className="navbar__rigth">
         <Link to="/" className="links">
           <h2>Products</h2>

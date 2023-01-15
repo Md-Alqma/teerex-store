@@ -1,4 +1,67 @@
 .cards__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+ 
+}
+
+/* Search Bar Css */
+.searchBox {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform:  translate(-50%,50%);
+  background: #a1e1fa;
+  height: 40px;
+  border-radius: 40px;
+  padding: 6px;
+
+}
+
+.searchBox:hover > .searchInput {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+background: #3B7197;
+color : #091920;
+cursor: pointer;
+}
+
+.searchButton {
+  color: #091920;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3B7197;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: #091920;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 30px;
+  width: 0px;
+
+}
+  /* Media Query */
+@media all and (max-width:640px) {
+  .cards__container {
+    grid-template-columns: max-content;
+    place-items: center;
+  }
+  .cards__container .container {
+    width: 100%;
+    align-items: center;
+  }
 }

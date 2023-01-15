@@ -6,4 +6,5 @@ body {
   grid-template-columns: 1fr 4fr;
   margin-top: 30px;
   padding: 0 20px;
+  margin-top: 100px;
 }

@@ -1,15 +1,14 @@
-import React, { useRef, useState } from "react";
-import { CartState} from "../../Context/CartContext";
+import React, { useState } from "react";
+import { CartState } from "../../Context/CartContext";
 import "./Products.css";
 function Products({ product }) {
   const [count, setCount] = useState(0);
   const [toggleBtn, setToggleBtn] = useState(false);
-  const addButton = useRef(null);
-  const hiddenBtn = useRef(null);
   const {
     state: { cart },
     dispatch,
   } = CartState();
+
   return (
     <div className="container">
       <div className="card">
@@ -28,19 +27,7 @@ function Products({ product }) {
             <p>{product.type}</p>
             <div className="wrapper">
               {toggleBtn ? (
-                <div ref={hiddenBtn} className="hidden__btn">
-                  <button
-                    onClick={() => {
-                      if (count === product.quantity) {
-                        alert("Reached max quantity");
-                      } else {
-                        setCount(count + 1);
-                      }
-                    }}
-                    className="plus__btn">
-                    +
-                  </button>
-                  <span className="count">{count}</span>
+                <div className="hidden__btn">
                   <button
                     onClick={() => {
                       if (count === 1) {
@@ -57,21 +44,37 @@ function Products({ product }) {
                     className="minus__btn">
                     -
                   </button>
+
+                  <span className="count">{count}</span>
+                  <button
+                    onClick={() => {
+                      if (count === product.quantity) {
+                        alert("Reached max quantity");
+                      } else {
+                        setCount(count + 1);
+                      }
+                    }}
+                    className="plus__btn">
+                    +
+                  </button>
                 </div>
               ) : (
                 <div className="btn_wrapper">
                   <button
-                    ref={addButton}
                     type="button"
-                    title="Bestel"
+                    title="Add"
                     className="button btn-cart"
                     onClick={() => {
-                      dispatch({
-                        type: "ADD_TO_CART",
-                        payload: product,
-                      });
-                      setCount(count + 1);
-                      setToggleBtn(true);
+                      if (cart.some((x) => x.id === product.id)) {
+                        alert("Product is already in the cart");
+                      } else {
+                        dispatch({
+                          type: "ADD_TO_CART",
+                          payload: product,
+                        });
+                        setCount(count + 1);
+                        setToggleBtn(true);
+                      }
                     }}>
                     <span>
                       <i className="fa fa-shopping-cart"></i>

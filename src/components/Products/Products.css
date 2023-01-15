@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.container .card {
+  margin-bottom: 2px;
+}
+
 .product__image img {
   width: 100%;
   height: 100%;
@@ -17,7 +21,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 32px;
-  color: #A1E1FA;
+  color: #a1e1fa;
 }
 
 .container .card .slide {
@@ -25,7 +29,7 @@
   height: 200px;
   transition: 0.5s;
   margin: 0 5px;
-  background-color: #74BDE0;
+  background-color: #74bde0;
 }
 
 .container .card .slide.slide1 {
@@ -36,6 +40,7 @@
   z-index: 1;
   transition: 0.7s;
   transform: translateY(60px);
+  cursor: pointer;
 }
 
 .container .card:hover .slide.slide1 {
@@ -102,7 +107,7 @@
 
 button.btn-cart {
   border: none;
-  background: #3B7197;
+  background: #3b7197;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
@@ -127,7 +132,12 @@ button.btn-cart:after {
   left: -60px;
   top: -100px;
   opacity: 0.1;
-  background: #3B7197;
+  background: #3b7197;
+}
+
+button.btn-cart:hover {
+  background-color: #a1e1fa;
+  color: #3b7197;
 }
 
 button.btn-cart:hover:after {
@@ -144,7 +154,7 @@ button.btn-cart .fa {
 }
 
 button.btn-cart .fa.fa-arrow-down {
-  color: #3B7197;
+  color: #3b7197;
   font-size: 10px;
   position: absolute;
   left: 9px;
@@ -160,7 +170,7 @@ button.btn-cart:before {
   height: 0%;
   left: 50%;
   top: 50%;
-  background-color: #3B7197;
+  background-color: #3b7197;
   width: 0%;
   opacity: 0.3;
   border-radius: 50%;
@@ -190,7 +200,7 @@ button.btn-cart:active:before {
 
 div.hidden__btn {
   border: none;
-  background: #3B7197;
+  background: #3b7197;
   border-radius: 25px;
   padding: 4px 12px;
   font: 16px;
@@ -245,4 +255,9 @@ button.minus__btn {
     top: -3px;
     opacity: 0;
   }
+}
+
+/* Media Query */
+@media all and (max-width:640px) {
+  
 }
