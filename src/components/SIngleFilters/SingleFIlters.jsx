@@ -1,13 +1,20 @@
 import React from "react";
 import "./SingleFilters.css";
-function SingleFilters({ data, title }) {
+function SingleFilters({ data, title, filterData }) {
   return (
     <div>
-      <h3>{title}</h3>
+      <h3 className="filter__title">{title}</h3>
       <div className="wrapper">
         {data?.map((el, index) => (
           <div key={index} className="switch_box box">
-            <input type="checkbox" className="switch" />
+            <input
+              onChange={(e) => {
+                filterData(e.target.value);
+              }}
+              value={el.name}
+              type="checkbox"
+              className="switch"
+            />
             <label>{el.name}</label>
           </div>
         ))}

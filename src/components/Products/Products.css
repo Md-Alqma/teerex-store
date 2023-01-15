@@ -17,7 +17,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 32px;
-  color: #000;
+  color: #A1E1FA;
 }
 
 .container .card .slide {
@@ -25,6 +25,7 @@
   height: 200px;
   transition: 0.5s;
   margin: 0 5px;
+  background-color: #74BDE0;
 }
 
 .container .card .slide.slide1 {
@@ -101,14 +102,14 @@
 
 button.btn-cart {
   border: none;
-  background: #ff8100;
+  background: #3B7197;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
   padding: 8px 25px;
   font: 16px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #091920;
   cursor: pointer;
   box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.2);
   transition: all 0.2s;
@@ -126,7 +127,7 @@ button.btn-cart:after {
   left: -60px;
   top: -100px;
   opacity: 0.1;
-  background: #ffffff;
+  background: #3B7197;
 }
 
 button.btn-cart:hover:after {
@@ -143,7 +144,7 @@ button.btn-cart .fa {
 }
 
 button.btn-cart .fa.fa-arrow-down {
-  color: #ff8100;
+  color: #3B7197;
   font-size: 10px;
   position: absolute;
   left: 9px;
@@ -159,7 +160,7 @@ button.btn-cart:before {
   height: 0%;
   left: 50%;
   top: 50%;
-  background-color: #ffffff;
+  background-color: #3B7197;
   width: 0%;
   opacity: 0.3;
   border-radius: 50%;
@@ -173,6 +174,7 @@ button.btn-cart span {
   position: relative;
   text-align: center;
   z-index: 1;
+  color: #091920;
 }
 
 button.btn-cart:hover .fa.fa-arrow-down {
@@ -188,12 +190,12 @@ button.btn-cart:active:before {
 
 div.hidden__btn {
   border: none;
-  background: #ff8100;
+  background: #3B7197;
   border-radius: 25px;
   padding: 4px 12px;
   font: 16px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #091920;
   box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.2);
   transition: all 0.2s;
 }

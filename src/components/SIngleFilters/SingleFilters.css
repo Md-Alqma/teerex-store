@@ -1,7 +1,8 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
+  color: #091920;
 }
 
 .switch_box {
@@ -17,6 +18,10 @@
   align-items: center;
 }
 
+.filter__title {
+  color: #091920;
+}
+
 input[type="checkbox"].switch {
   appearance: none;
   width: 3.5em;
@@ -28,10 +33,11 @@ input[type="checkbox"].switch {
   outline: none;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  margin-right: 10px;
 }
 
 input[type="checkbox"].switch:checked {
-  background: #0ebeff;
+  background: #81d7f9;
 }
 
 input[type="checkbox"].switch:after {

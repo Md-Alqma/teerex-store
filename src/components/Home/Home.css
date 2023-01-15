@@ -1,5 +1,9 @@
+body {
+  background-color: #4A8DB7;
+}
 .home__container {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr 4fr;
   margin-top: 30px;
+  padding: 0 20px;
 }
