@@ -1,3 +1,9 @@
+# teerex is an e-commerce site where user can purchase products.
+
+## the website has beautiful UI and great user experience.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
