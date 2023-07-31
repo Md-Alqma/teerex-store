@@ -1,6 +1,7 @@
 # teerex is an e-commerce site where user can purchase products.
 
 ## the website has beautiful UI and great user experience.
+## There is beautiful animation as well for better UI.
 
 
 
