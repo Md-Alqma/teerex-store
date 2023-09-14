@@ -1,6 +1,6 @@
 import React from "react";
 import "./Filter.css";
-import SingleFilters from "../SIngleFilters/SingleFilters";
+import SingleFilters from "../SIngleFilters/SingleFIlters";
 function Filter({filterData}) {
   let colour = [{ name: "Red" }, { name: "Blue" }, { name: "Green" }];
   let gender = [{ name: "Men" }, { name: "Women" }];
