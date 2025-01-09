@@ -44,7 +44,7 @@ function Home() {
         </button>
       </div>
       <div className="home__container">
-        <Filter />
+        <Filter filterData={productsData} />
         <ProductList productsData={productsData} />
       </div>
     </>

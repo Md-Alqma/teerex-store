@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { CartState } from "../../Context/CartContext";
-import Navbar from "../Navbar/Navbar";
 import "./Cart.css";
 function Cart() {
   const {
