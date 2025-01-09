@@ -16,7 +16,6 @@ function Cart() {
   }, [cart]);
   return (
     <>
-      <Navbar />
       <div className="cart__container">
         <div className="cart__items__container">
           {cart?.map((item) => (
